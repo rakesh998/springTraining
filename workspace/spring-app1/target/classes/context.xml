@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<bean id="msg" class="com.demo.spring.Message">
+	<property name="header" value="test my mail" />
+	<property name="body" value="success" />
+</bean>
+<bean id="mail" class="com.demo.spring.Mail">
+	<property name="toAddress" value="all"></property>
+	<property name="fromAddress" value="testing"></property>
+	<property name="message" ref="msg"></property>
+</bean>
+
+</beans>
